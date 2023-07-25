@@ -22,19 +22,13 @@ public class ContactEntity {
     private Long id;
     private String name;
     private String email;
+    private String phone;
 
-    public static ContactEntity toContactEntity(Contact domain) {
+    public ContactEntity toContactEntity(Contact domain){
         return ContactEntity.builder()
                 .name(domain.getName())
                 .email(domain.getEmail())
-                .build();
-    }
-
-    public static Contact toContactDomain(ContactEntity entity) {
-        return Contact.builder()
-                .id(entity.id)
-                .name(entity.name)
-                .email(entity.email)
+                .phone(domain.getPhone())
                 .build();
     }
 

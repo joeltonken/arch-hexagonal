@@ -11,13 +11,16 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 public class ContactRequest {
+    private Long id;
     private String name;
     private String email;
+    private String phone;
 
-    public Contact toContactDomain(ContactRequest request){
+    public Contact toDomain(ContactRequest request) {
         return Contact.builder()
                 .name(request.name)
                 .email(request.email)
+                .phone(request.phone)
                 .build();
     }
 }

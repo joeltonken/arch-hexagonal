@@ -15,8 +15,12 @@ public class ContactRepositoryService implements IContactRepositoryPort {
 
     @Override
     public Contact createContact(Contact contactDomain) {
-        var entitySave = ContactEntity.toContactEntity(contactDomain);
-        var entity = contactRepository.save(entitySave);
-        return ContactEntity.toContactDomain(entity);
+        var entity =  this.contactRepository.save(new ContactEntity().toContactEntity(contactDomain));
+        return Contact.builder()
+                .id(entity.getId())
+                .name(entity.getName())
+                .email(entity.getEmail())
+                .phone(entity.getPhone())
+                .build();
     }
 }

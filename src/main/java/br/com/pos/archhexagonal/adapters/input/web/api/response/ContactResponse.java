@@ -14,12 +14,14 @@ public class ContactResponse {
     private Long id;
     private String name;
     private String email;
+    private String phone;
 
     public static ContactResponse toContactResponse(Contact domain) {
         return ContactResponse.builder()
                 .id(domain.getId())
                 .name(domain.getName())
                 .email(domain.getEmail())
+                .phone(domain.getPhone())
                 .build();
     }
 }
