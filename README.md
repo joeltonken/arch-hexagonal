@@ -1,4 +1,4 @@
-# Programa para estudo da Arquitetura Hexagonal
+# Estudando a Arquitetura Hexagonal
 
 Este é um exemplo de programa simples que utiliza a arquitetura hexagonal para separar as responsabilidades e facilitar a manutenção e testabilidade do código. O programa é desenvolvido em Java 17, utilizando o framework Spring e o banco de dados H2.
 
