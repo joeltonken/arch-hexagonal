@@ -1,10 +1,13 @@
 package br.com.pos.archhexagonal.application.domain;
 
 import br.com.pos.archhexagonal.application.ports.output.IContactRepositoryPort;
+import br.com.pos.archhexagonal.application.ports.output.IListContactDomainRepository;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @Data // Faz get e set ou @Getter ou @Setter
 @AllArgsConstructor // Construtor com todos os argumentos
@@ -35,5 +38,9 @@ public class Contact {
         if (domain.phone == null || domain.phone.isEmpty()) {
             throw  new IllegalArgumentException("Contact phone is not by null or empty");
         }
+    }
+
+    public List<Contact> list (IListContactDomainRepository iListContactDomainRepository) {
+        return iListContactDomainRepository.execute();
     }
 }
