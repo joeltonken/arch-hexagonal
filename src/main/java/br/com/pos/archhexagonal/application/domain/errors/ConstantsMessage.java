@@ -1,6 +1,6 @@
 package br.com.pos.archhexagonal.application.domain.errors;
 
-import br.com.cbgomes.application.utils.ConfigMessageProperties;
+import br.com.pos.archhexagonal.application.utils.ConfigMessageProperties;
 import lombok.AllArgsConstructor;
 
 import java.util.Locale;

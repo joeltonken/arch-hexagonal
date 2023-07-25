@@ -1,6 +1,5 @@
 package br.com.pos.archhexagonal.application.domain;
 
-import br.com.pos.archhexagonal.adapters.input.web.api.response.ContactResponse;
 import br.com.pos.archhexagonal.application.ports.output.IContactRepositoryPort;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
