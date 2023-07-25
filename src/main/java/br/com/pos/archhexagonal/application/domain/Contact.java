@@ -16,10 +16,25 @@ public class Contact {
     private Long id;
     private String name;
     private String email;
+    private String phone;
 
     public Contact save(IContactRepositoryPort iContactRepositoryPort) {
         //salvar o contato
+        validContactDomain(this);
         return iContactRepositoryPort.createContact(this);
     }
 
+    private void validContactDomain(Contact domain) {
+        if (domain.name == null || domain.name.isEmpty()) {
+            throw  new IllegalArgumentException("Contact name is not by null or empty");
+        }
+
+        if (domain.email == null || domain.email.isEmpty()) {
+            throw  new IllegalArgumentException("Contact e-mail is not by null or empty");
+        }
+
+        if (domain.phone == null || domain.phone.isEmpty()) {
+            throw  new IllegalArgumentException("Contact phone is not by null or empty");
+        }
+    }
 }

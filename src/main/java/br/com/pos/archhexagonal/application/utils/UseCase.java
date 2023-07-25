@@ -1,10 +1,12 @@
 package br.com.pos.archhexagonal.application.utils;
 
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Retention;
-import java.lang.annotation.Target;
+import org.springframework.stereotype.Component;
+
+import java.lang.annotation.*;
 
 @Target({ElementType.TYPE})
-@Retention() //continuar
+@Retention(RetentionPolicy.RUNTIME)
+@Documented
+@Component
 public @interface UseCase {
 }
