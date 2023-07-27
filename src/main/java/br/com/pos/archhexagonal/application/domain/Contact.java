@@ -1,6 +1,7 @@
 package br.com.pos.archhexagonal.application.domain;
 
 import br.com.pos.archhexagonal.application.ports.output.IContactRepositoryPort;
+import br.com.pos.archhexagonal.application.ports.output.IGetContactGetByIdRepository;
 import br.com.pos.archhexagonal.application.ports.output.IListContactDomainRepository;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -42,5 +43,9 @@ public class Contact {
 
     public List<Contact> list (IListContactDomainRepository iListContactDomainRepository) {
         return iListContactDomainRepository.execute();
+    }
+
+    public Contact getById(IGetContactGetByIdRepository iGetContactGetByIdRepository) {
+        return iGetContactGetByIdRepository.execute(this.id);
     }
 }
